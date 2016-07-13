@@ -1,4 +1,4 @@
-
+/* @flow */
 'use strict';
 
 var React = require('react-native');
@@ -14,14 +14,14 @@ module.exports = StyleSheet.create({
         height: null,
     },
     roundedButton: {
-        alignSelf: 'center',
-        marginTop: 25,
-        backgroundColor: '#00c497',
-        borderRadius:90,
-        width: 65,
-        height:65
+      alignSelf: 'center',
+      marginTop: 25,
+      backgroundColor: '#00c497',
+      borderRadius:90,
+      width: 65,
+      height:65
     },
     name: {
-        color: 'red'
+      color: 'red'
     }
 });

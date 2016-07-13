@@ -1,9 +1,10 @@
-
 'use strict';
+//Currently using it as playground
 
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Image} from 'react-native';
+// import CodePush from 'react-native-code-push';
+import { Image, View } from 'react-native';
 
 
 export default class SplashPage extends Component {
@@ -12,7 +13,7 @@ export default class SplashPage extends Component {
         var navigator = this.props.navigator;
         setTimeout (() => {
             navigator.replace({
-                id: 'index',
+                id: 'login',
             });
         }, 1500);
     }

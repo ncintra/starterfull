@@ -8,13 +8,15 @@ module.exports = {
     brandSuccess: "#5cb85c",
     brandDanger: "#d9534f",
     brandWarning: "#f0ad4e",
-    brandSidebar: "#252932",
+    brandSidebar: "#252A30",
+
+    brandSecondary: "#00c497",   //new style
 
     inverseTextColor: "#000",
     textColor: "#fff",
 
     fontSizeBase: 15,
-    titleFontSize: 17,
+    titleFontSize: 18,
 
     get fontSizeH1 () {
         return this.fontSizeBase*1.8;
@@ -35,7 +37,7 @@ module.exports = {
         return this.fontSizeBase* .8;
     },
     get iconSizeLarge () {
-        return this.iconFontSize* 1.5;
+        return this.iconFontSize* 1.4;
     },
     get iconSizeSmall () {
         return this.iconFontSize* .6;
@@ -52,17 +54,17 @@ module.exports = {
     toolbarDefaultBg: "#00c497",
     toolbarInverseBg: "#222",
 
-        tabBgColor: "#00c497",
-        tabTextColor: "#fff",
+    tabBgColor: "#00c497",
+	tabTextColor: "#fff",
 
-        btnDisabledBg: '#b5b5b5',
-    btnDisabledClr: '#f1f1f1',
+    get darkenHeader() {
+		return Color(this.tabBgColor).darken(0.03).hexString();
+	},
 
-        cardDefaultBg: "#fff",
+    get statusBarColor() {
+		return Color(this.toolbarDefaultBg).darken(0.1).hexString();
+	},
 
-        get darkenHeader() {
-            return Color(this.tabBgColor).darken(0.03).hexString();
-        },
     get btnPrimaryBg () {
         return this.brandPrimary;
     },
@@ -100,17 +102,16 @@ module.exports = {
         return this.textColor;
     },
     get inputColorPlaceholder () {
-        return 'rgba(0, 0, 0, 0.7)';
+        return 'rgba(255, 255, 255, 1.0)';
     },
-    inputBorderColor: "#000",
+
+    inputBorderColor: "#fff",
     inputHeightBase: 40,
     inputGroupMarginBottom: 10,
     inputPaddingLeft: 5,
     get inputPaddingLeftIcon () {
         return this.inputPaddingLeft* 8;
     },
-
-    btnLineHeight: (Platform.OS==='ios') ? 20 : 23,
 
     dropdownBg: "#000",
     dropdownLinkColor: "#414142",
@@ -120,12 +121,13 @@ module.exports = {
 
     contentPadding: 10,
 
-    listBorderColor: "#ddd",
-    listDividerBg: "#F5F5F5",
+    listBorderColor: "rgba(181, 181, 181, 0.34)",
+    listDividerBg: "#f2f2f2",
     listItemPadding: 15,
-    listNoteColor: "#58575C",
+    listNoteColor: "#ddd",
+    listBg: "#fff",
 
-    iconFontSize: 32,
+    iconFontSize: 30,
 
     badgeColor: "#fff",
     badgeBg: "#ED1727",
