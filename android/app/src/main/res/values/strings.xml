@@ -1,6 +1,3 @@
 <resources>
-
-    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey"></string>
-
-    <string name="app_name">NSP</string>
+    <string name="app_name">NativeStarterProSeed</string>
 </resources>
