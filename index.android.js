@@ -4,4 +4,4 @@ import { AppRegistry } from 'react-native'
 import setup from './js/setup'
 
 
-AppRegistry.registerComponent('NativeStarterProSeed', setup);
+AppRegistry.registerComponent('NativeStarterPro', setup);

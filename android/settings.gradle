@@ -1,4 +1,4 @@
-rootProject.name = 'NativeStarterProSeed'
+rootProject.name = 'NativeStarterPro'
 
 include ':app'
 include ':react-native-vector-icons'
