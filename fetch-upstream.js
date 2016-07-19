@@ -24,13 +24,13 @@ var packageJson = JSON.parse(fs.readFileSync(process.cwd() + '/package.json', 'u
 
 var output = child_process.spawnSync(
 				"git", 
-				["remote", "add", "origin", originLinks[packageJson.name]], 
+				["remote", "add", "origin", originLinks[packageJson.repoName]], 
 				{encoding: 'utf8'});
 
 if(output.status != 0) {
 	var cOutput = child_process.spawnSync(
 					"git", 
-					["remote", "set-url", "origin", originLinks[packageJson.name]], 
+					["remote", "set-url", "origin", originLinks[packageJson.repoName]], 
 					{encoding: 'utf8'});
 
 	console.log(cOutput.output[1]);
@@ -41,13 +41,13 @@ else {
 
 var output = child_process.spawnSync(
 				"git", 
-				["remote", "add", "upstream", upstreamLinks[packageJson.name]], 
+				["remote", "add", "upstream", upstreamLinks[packageJson.repoName]], 
 				{encoding: 'utf8'});
 
 if(output.status != 0) {
 	var cOutput = child_process.spawnSync(
 					"git", 
-					["remote", "set-url", "upstream", upstreamLinks[packageJson.name]], 
+					["remote", "set-url", "upstream", upstreamLinks[packageJson.repoName]], 
 					{encoding: 'utf8'});
 
 	console.log(cOutput.output[1]);
