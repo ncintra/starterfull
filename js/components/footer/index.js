@@ -1,13 +1,14 @@
-/* @flow */
+
 'use strict';
 
 import React, {Component} from 'react';
-
-import { TouchableOpacity } from "react-native";
-import { Icon, View, Text } from "native-base";
 import {connect} from 'react-redux';
+import { TouchableOpacity } from "react-native";
+
 import {closeDrawer} from '../../actions/drawer';
 import {replaceOrPushRoute} from '../../actions/route';
+
+import { Icon, View, Text } from "native-base";
 
 import styles from './styles';
 

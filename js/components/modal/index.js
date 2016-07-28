@@ -1,20 +1,16 @@
-/**
- * Created by kylefang on 4/28/16.
- * @flow
- */
 
 'use strict';
-//Currently using it as playground
 
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-// import CodePush from 'react-native-code-push';
 import { Image, View } from 'react-native';
+
 import {openDrawer} from '../../actions/drawer';
 import {popRoute} from '../../actions/route';
 
 import {Container, Header, Title, Content, Text, Button, Icon, List, ListItem} from 'native-base';
 import Modal from 'react-native-modalbox';
+
 import theme from '../../themes/base-theme';
 import styles from './styles';
 
@@ -48,63 +44,54 @@ class Modal1 extends Component {
     render() {
         return (
             <Container theme={theme} style={{backgroundColor: '#384850'}}>
-              <Image source={require('../../../images/glow2.png')} style={styles.container} >
-                <Header>
-                    <Button transparent onPress={() => this.popRoute()}>
-                        <Icon name="ios-arrow-back" />
-                    </Button>
-                    <Title>Modal</Title>
-                    <Button transparent onPress={this.props.openDrawer}>
-                        <Icon name="ios-menu" />
-                    </Button>
-                </Header>
+                <Image source={require('../../../images/glow2.png')} style={styles.container} >
+                    <Header>
+                        <Button transparent onPress={() => this.popRoute()}>
+                            <Icon name="ios-arrow-back" />
+                        </Button>
+                        
+                        <Title>Modal</Title>
+                        
+                        <Button transparent onPress={this.props.openDrawer}>
+                            <Icon name="ios-menu" />
+                        </Button>
+                    </Header>
 
-                <Content  style={{backgroundColor: 'transparent'}}>
+                    <Content  style={{backgroundColor: 'transparent'}}>
                         <View style={styles.box}>
-                          <View style={styles.space}>
-                               <Button block rounded style={{backgroundColor: '#00c497'}} textStyle={{color: '#fff'}} onPress={this.openModal1.bind(this)}>
+                            <View style={styles.space}>
+                                <Button block rounded style={{backgroundColor: '#00c497'}} textStyle={{color: '#fff'}} onPress={this.openModal1.bind(this)}>
                                    Basic Modal
-                               </Button>
-
-                          </View>
-                          <View style={styles.space}>
-
-                               <Button block rounded style={{backgroundColor: '#00c497'}} textStyle={{color: '#fff'}} onPress={this.openModal2.bind(this)}>
+                                </Button>
+                            </View>
+                            <View style={styles.space}>
+                                <Button block rounded style={{backgroundColor: '#00c497'}} textStyle={{color: '#fff'}} onPress={this.openModal2.bind(this)}>
                                    Custom Modal
-                               </Button>
+                                </Button>
+                            </View>
+                        </View>
 
-                         </View>
-                       </View>
+                        <Modal style={[styles.modal, styles.modal1]} backdrop={false} ref={"modal1"} swipeToClose={this.state.swipeToClose} >
+                            <View style={styles.space}>
+                                <Text style={{color: '#000', marginBottom: 10}}>Basic modal</Text>
+                                <Button  rounded style={{backgroundColor: '#00c497'}} textStyle={{color: '#fff'}} onPress={this.closeModal1.bind(this)} >
+                                 Close Modal
+                                </Button>
+                            </View>
+                        </Modal>
 
-
-
-                           <Modal style={[styles.modal, styles.modal1]} backdrop={false} ref={"modal1"} swipeToClose={this.state.swipeToClose} >
-
-                               <View style={styles.space}>
-                                   <Text style={{color: '#000', marginBottom: 10}}>Basic modal</Text>
-                                   <Button  rounded style={{backgroundColor: '#00c497'}} textStyle={{color: '#fff'}} onPress={this.closeModal1.bind(this)} >
-                                     Close Modal
-                                   </Button>
-                               </View>
-
-                           </Modal>
-
-
-
-                           <Modal style={[styles.modal, styles.modal2]} backdrop={false} ref={"modal2"} swipeToClose={false} >
-
-                             <Button transparent style={{position: 'absolute', top: 0, right: 0}} onPress={this.closeModal2.bind(this)} >
-                               <Icon name="ios-close" style={{color:'#000'}} />
-                             </Button>
-                               <View style={styles.space}>
-                                   <Text style={{color: '#000'}}>
-                                       This is a full screen modal.
-                                   </Text>
-                               </View>
-
-                           </Modal>
-                </Content>
-              </Image>
+                        <Modal style={[styles.modal, styles.modal2]} backdrop={false} ref={"modal2"} swipeToClose={false} >
+                            <Button transparent style={{position: 'absolute', top: 0, right: 0}} onPress={this.closeModal2.bind(this)} >
+                                <Icon name="ios-close" style={{color:'#000'}} />
+                            </Button>
+                            <View style={styles.space}>
+                                <Text style={{color: '#000'}}>
+                                    This is a full screen modal.
+                                </Text>
+                            </View>
+                        </Modal>
+                    </Content>
+                </Image>
             </Container>
         )
     }

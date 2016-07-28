@@ -1,15 +1,10 @@
-/**
- * Created by kylefang on 4/28/16.
- * @flow
- */
 
 'use strict';
-//Currently using it as playground
 
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-// import CodePush from 'react-native-code-push';
 import { Image, View } from 'react-native';
+
 import {openDrawer} from '../../actions/drawer';
 import {popRoute} from '../../actions/route';
 
@@ -40,29 +35,33 @@ class Calendar extends Component {
     render() {
         return (
             <Container theme={theme} style={{backgroundColor: '#384850'}}>
-              <Image source={require('../../../images/glow2.png')} style={styles.container} >
-                <Header>
-                    <Button transparent onPress={() => this.popRoute()}>
-                        <Icon name="ios-arrow-back" />
-                    </Button>
-                    <Title>Calendar</Title>
-                    <Button transparent onPress={this.props.openDrawer}>
-                        <Icon name="ios-menu" />
-                    </Button>
-                </Header>
+                <Image source={require('../../../images/glow2.png')} style={styles.container} >
+                    <Header>
+                        <Button transparent onPress={() => this.popRoute()}>
+                            <Icon name="ios-arrow-back" />
+                        </Button>
+                        
+                        <Title>Calendar</Title>
+                        
+                        <Button transparent onPress={this.props.openDrawer}>
+                            <Icon name="ios-menu" />
+                        </Button>
+                    </Header>
 
-                <Content padder style={{backgroundColor: 'transparent'}}>
-                    <CalendarPicker
+                    <Content padder style={{backgroundColor: 'transparent'}}>
+                        <CalendarPicker
                         selectedDate={this.state.date}
                         onDateChange={this.onDateChange.bind(this)} />
-                      <Text style={{marginTop: 5, alignSelf: 'center'}} >
-                      Date:  { this.state.date.toString().substr(4,12) }
-                    </Text>
-                </Content>
-                <Footer>
-                  <FooterComponent />
-                </Footer>
-              </Image>
+                        
+                        <Text style={{marginTop: 5, alignSelf: 'center'}} >
+                            Date:  { this.state.date.toString().substr(4,12) }
+                        </Text>
+                    </Content>
+                    
+                    <Footer>
+                        <FooterComponent />
+                    </Footer>
+                </Image>
             </Container>
         )
     }

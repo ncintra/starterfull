@@ -1,17 +1,11 @@
-/**
- * Created by kylefang on 4/28/16.
- * @flow
- */
 
 'use strict';
-//Currently using it as playground
 
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-// import CodePush from 'react-native-code-push';
 import { DeviceEventEmitter, Dimensions, Image, Platform, Keyboard} from 'react-native';
-import {pushNewRoute, replaceRoute} from '../../actions/route';
 
+import {pushNewRoute, replaceRoute} from '../../actions/route';
 import {Container, Content, Text, InputGroup, Input, Button, Icon, View } from 'native-base';
 
 import login from './login-theme';
@@ -28,19 +22,6 @@ class Login extends Component {
             scroll: false
         };
     }
-    // componentWillMount () {
-    //     Keyboard.addListener('keyboardWillShow', this.keyboardWillShow.bind(this))
-    //     Keyboard.addListener('keyboardWillHide', this.keyboardWillHide.bind(this))
-    // }
-
-    // keyboardWillShow (e) {
-    //     let newSize = Dimensions.get('window').height - e.endCoordinates.height
-    //     this.setState({scroll: true})
-    // }
-
-    // keyboardWillHide (e) {
-    //     this.setState({scroll: false})
-    // }
 
     replaceRoute(route) {
         this.props.replaceRoute(route);
@@ -89,7 +70,6 @@ class Login extends Component {
         )
     }
 }
-
 
 function bindActions(dispatch){
     return {

@@ -1,4 +1,4 @@
-/* @flow */
+
 'use strict';
 
 import { StyleSheet } from "react-native";
@@ -10,10 +10,10 @@ module.exports = StyleSheet.create({
         height: null,
     },
     iconContainer: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around',
-      paddingLeft: 15
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        paddingLeft: 15
     },
     icon: {
         width: 45,

@@ -1,4 +1,4 @@
-/* @flow */
+
 'use strict';
 
 import { StyleSheet, Dimensions } from "react-native";
@@ -19,7 +19,7 @@ module.exports = StyleSheet.create({
     space: {
     	marginTop: 10,
     	marginBottom: 10,
-      justifyContent: 'center'
+        justifyContent: 'center'
     },
     modal: {
         justifyContent: 'center',
@@ -27,7 +27,6 @@ module.exports = StyleSheet.create({
     },
     modal1: {
         height: 300
-
     },
     modal2: {
         height: height-78,
