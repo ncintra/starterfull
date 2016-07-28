@@ -1,9 +1,12 @@
 
 import React, {Component} from 'react';
-import {Text, Icon, List, ListItem, Content, Thumbnail} from 'native-base';
 import {connect} from 'react-redux';
+
 import {closeDrawer} from '../../actions/drawer';
 import {replaceOrPushRoute} from '../../actions/route';
+
+import {Text, Icon, List, ListItem, Content, Thumbnail} from 'native-base';
+
 import styles from "./style";
 
 class SideBar extends Component {

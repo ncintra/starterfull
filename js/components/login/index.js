@@ -6,14 +6,12 @@ import {connect} from 'react-redux';
 import {Dimensions, Image, Platform} from 'react-native';
 
 import {pushNewRoute, replaceRoute} from '../../actions/route';
-
 import {Container, Content, Text, InputGroup, Input, Button, Icon, View } from 'native-base';
 
 import login from './login-theme';
 import styles from './styles';
 
-
-class Index extends Component {
+class Login extends Component {
 
 	constructor(props) {
         super(props);
@@ -73,7 +71,6 @@ class Index extends Component {
     }
 }
 
-
 function bindActions(dispatch){
     return {
         replaceRoute:(route)=>dispatch(replaceRoute(route)),
@@ -81,4 +78,4 @@ function bindActions(dispatch){
     }
 }
 
-export default connect(null, bindActions)(Index);
+export default connect(null, bindActions)(Login);
