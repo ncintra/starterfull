@@ -1,12 +1,10 @@
 
-
 'use strict';
-//Currently using it as playground
 
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-// import CodePush from 'react-native-code-push';
 import { Image } from 'react-native';
+
 import {popRoute} from '../../actions/route';
 
 import {Container, Header, Title, Content, Text, Button, Icon, InputGroup, Input, View } from 'native-base';
